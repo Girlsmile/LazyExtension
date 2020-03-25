@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension UIImage {
+public extension UIImage {
 
 
        func normalized() -> UIImage  {

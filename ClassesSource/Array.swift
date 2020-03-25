@@ -7,7 +7,7 @@
 //
 
 import Foundation
-extension Array{
+public extension Array {
     
     /// 自定义下标写法
     /// subscript用于更方便的访问集合中的数据

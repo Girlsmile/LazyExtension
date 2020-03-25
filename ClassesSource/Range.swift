@@ -7,7 +7,7 @@
 //
 
 import Foundation
-extension Range where Bound: FixedWidthInteger {
+public extension Range where Bound: FixedWidthInteger {
     
     var random: Bound { .random(in: self) }
     
@@ -15,7 +15,7 @@ extension Range where Bound: FixedWidthInteger {
     
 }
 
-extension ClosedRange where Bound: FixedWidthInteger  {
+public extension ClosedRange where Bound: FixedWidthInteger  {
     
     var random: Bound { .random(in: self) }
     

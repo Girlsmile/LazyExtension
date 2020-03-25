@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension UILabel {
+public extension UILabel {
     
     @available(iOS 8.2, *)
     func setFont(_ size: CGFloat, weight: UIFont.Weight, color: UIColor = UIColor.black) {

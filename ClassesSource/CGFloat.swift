@@ -7,8 +7,9 @@
 //
 
 import Foundation
-extension CGFloat {
+public extension CGFloat {
     
+    // MARK: - 向下去余, 一般用于解决视频黑边问题
     func _$(_ multiple:Int) -> CGFloat {
         var width = Int(self)
         width -= (width % multiple)
