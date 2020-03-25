@@ -9,9 +9,9 @@
 import Foundation
 extension CGFloat {
     
-    func _$4() -> CGFloat {
+    func _$(_ multiple:CGFloat) -> CGFloat {
         var width = Int(self)
-        width -= (width % 4)
+        width -= (width % multiple)
         return CGFloat(width)
     }
     

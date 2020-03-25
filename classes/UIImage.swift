@@ -10,49 +10,7 @@ import Foundation
 
 extension UIImage {
 
-    func flipImage() -> UIImage {
-        UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale)
-        guard let context = UIGraphicsGetCurrentContext() else { return self }
-        guard let cgImage = self.cgImage else { return self }
-        
-        context.translateBy(x: self.size.width, y: self.size.height)
-        context.scaleBy(x: -self.scale, y: -self.scale)
-        context.draw(cgImage, in: CGRect(origin: .zero, size: self.size))
-        
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        
-        UIGraphicsEndImageContext()
-        
-        return newImage ?? self
-    }
-    
-    func rotateImage() -> UIImage {
-        return self.rotated(by: CGFloat.pi*0.5) ?? self
-    }
-    
-    func resize(size: CGSize) -> UIImage? {
-           var width = self.size.width
-           var height = self.size.height
-           
-           UIGraphicsBeginImageContextWithOptions(size, false, self.scale)
-           
-           let scaleX = width/size.width
-           let scaleY = height/size.height
-           
-           width /= min(scaleX, scaleY)
-           height /= min(scaleX, scaleY)
-           
-           let originX = (size.width - width) / 2.0
-           let originY = (size.height - height) / 2.0
-           self.draw(in: CGRect(x: originX, y: originY, width: width, height: height))
-           
-           let newImage = UIGraphicsGetImageFromCurrentImageContext()
-           UIGraphicsEndImageContext()
-           
-           return newImage
-       }
-       
-       
+
        func normalized() -> UIImage  {
            if (self.imageOrientation == UIImage.Orientation.up) {
                return self;
