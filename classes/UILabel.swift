@@ -10,6 +10,7 @@ import Foundation
 
 extension UILabel {
     
+    @available(iOS 8.2, *)
     func setFont(_ size: CGFloat, weight: UIFont.Weight, color: UIColor = UIColor.black) {
         self.font = UIFont.systemFont(ofSize: size, weight: weight)
         self.textColor = color

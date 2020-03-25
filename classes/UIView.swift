@@ -42,7 +42,7 @@ extension UIView {
     
     func setCornerBorder(corners: UIRectCorner, radii: CGFloat, color: UIColor, lineWidth: CGFloat) {
         setRoundCorner(corners: corners, radii: radii)
-        let path = UIBezierPath(roundedRect: CGRect(origin: .zero, size: size), byRoundingCorners: corners, cornerRadii: CGSize.init(width: radii, height: radii))
+        let path = UIBezierPath(roundedRect: CGRect(origin: .zero, size: self.bounds.size), byRoundingCorners: corners, cornerRadii: CGSize.init(width: radii, height: radii))
         let shape = CAShapeLayer()
         shape.path = path.cgPath
         shape.strokeColor = color.cgColor
