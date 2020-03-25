@@ -9,7 +9,7 @@
 import Foundation
 public class BaseNavigateController: UINavigationController {
     
-    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+    override public func pushViewController(_ viewController: UIViewController, animated: Bool) {
         self.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         super.pushViewController(viewController, animated: animated)
     }
