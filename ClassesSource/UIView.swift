@@ -58,27 +58,27 @@ public extension UIView {
     
     /// 添加圆角和阴影 radius:圆角半径 shadowOpacity: 阴影透明度 (0-1) shadowColor: 阴影颜色
     func addRoundedOrShadow(radius:CGFloat, shadowOpacity:CGFloat, shadowColor:UIColor)  {
-         self.layer.cornerRadius = radius
-         self.layer.masksToBounds = true
-         let subLayer = CALayer()
-         let fixframe = self.frame
-         let newFrame = CGRect(x: fixframe.minX-(375-UIScreen.main.bounds.size.width)/2, y: fixframe.minY, width: fixframe.width, height: fixframe.height) // 修正偏差
-         subLayer.frame = newFrame
-         subLayer.cornerRadius = radius
-         subLayer.backgroundColor = UIColor.white.cgColor
-         subLayer.masksToBounds = false
-         subLayer.shadowColor = shadowColor.cgColor // 阴影颜色
-         subLayer.shadowOffset = CGSize(width: 3, height: 3) // 阴影偏移,width:向右偏移3，height:向下偏移2，默认(0, -3),这个跟shadowRadius配合使用
-         subLayer.shadowOpacity = Float(shadowOpacity) //阴影透明度
-         subLayer.shadowRadius = 12;//阴影半径，默认3
-         self.superview?.layer.insertSublayer(subLayer, below: self.layer)
-     }
+        self.layer.cornerRadius = radius
+        self.layer.masksToBounds = true
+        let subLayer = CALayer()
+        let fixframe = self.frame
+        let newFrame = CGRect(x: fixframe.minX-(375-UIScreen.main.bounds.size.width)/2, y: fixframe.minY, width: fixframe.width, height: fixframe.height) // 修正偏差
+        subLayer.frame = newFrame
+        subLayer.cornerRadius = radius
+        subLayer.backgroundColor = UIColor.white.cgColor
+        subLayer.masksToBounds = false
+        subLayer.shadowColor = shadowColor.cgColor // 阴影颜色
+        subLayer.shadowOffset = CGSize(width: 3, height: 3) // 阴影偏移,width:向右偏移3，height:向下偏移2，默认(0, -3),这个跟shadowRadius配合使用
+        subLayer.shadowOpacity = Float(shadowOpacity) //阴影透明度
+        subLayer.shadowRadius = 12;//阴影半径，默认3
+        self.superview?.layer.insertSublayer(subLayer, below: self.layer)
+    }
     
     func asImage(croppingRect: CGRect? = nil) -> UIImage {
         
         let scale = UIScreen.main.scale
         UIGraphicsBeginImageContextWithOptions(self.frame.size, false, scale)
-      
+        
         self.layer.render(in:UIGraphicsGetCurrentContext()!)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         
@@ -99,6 +99,6 @@ public extension UIView {
         
         return UIImage()
     }
-   
+    
     
 }
