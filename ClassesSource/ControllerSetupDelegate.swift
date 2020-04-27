@@ -17,6 +17,6 @@ import Foundation
     
     func setupNotification()
     
-    @objc func optional func setupBanner()
-    
+    @objc optional func setupBanner()
+
 }
