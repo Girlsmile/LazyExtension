@@ -6,7 +6,7 @@
 //  Copyright © 2020 古智鹏. All rights reserved.
 //
 
-public protocol VCWithBackButtonHandler {
+public protocol ControllerBackBarDelegate {
     func shouldPopOnBackButton() -> Bool
 }
 
@@ -20,7 +20,7 @@ extension UINavigationController: UINavigationBarDelegate  {
         var shouldPop = true
         let vc = self.topViewController
         
-        if let vc = vc as? VCWithBackButtonHandler {
+        if let vc = vc as? ControllerBackBarDelegate {
             shouldPop = vc.shouldPopOnBackButton()
         }
         
