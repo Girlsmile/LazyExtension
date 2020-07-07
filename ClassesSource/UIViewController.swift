@@ -7,7 +7,7 @@
 //
 
 import Foundation
-extension UIViewController {
+public extension UIViewController {
     
     func presentFully(_ viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)? = nil) {
         viewControllerToPresent.modalPresentationStyle = .fullScreen
